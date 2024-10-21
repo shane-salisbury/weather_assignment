@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weather_icon">Weather Icon</string>
+    <string name="weather_speed">Wind Speed</string>
+    <string name="high_temp">Hi Temp:&#160;</string>
+    <string name="low_temp">Low Temp:&#160;</string>
+    <string name="retry">Retry</string>
+</resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dailyForecast"
+            type="com.weather.core.model.DailyForecast" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary">
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dailyForecast.date}"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Saturday, September 07" />
+
+        <TextView
+            android:id="@+id/txt_high_temp_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/high_temp"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_date" />
+
+        <TextView
+            android:id="@+id/txt_high_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dailyForecast.highTemperature}"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_high_temp_label"
+            app:layout_constraintTop_toBottomOf="@+id/txt_date"
+            tools:text="66° F" />
+
+        <TextView
+            android:id="@+id/txt_low_temp_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/low_temp"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_high_temp" />
+
+        <TextView
+            android:id="@+id/txt_low_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dailyForecast.lowTemperature}"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_low_temp_label"
+            app:layout_constraintTop_toBottomOf="@+id/txt_high_temp"
+            tools:text="52° F" />
+
+        <TextView
+            android:id="@+id/txt_wind_speed_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_speed"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_date"/>
+
+        <TextView
+            android:id="@+id/txt_wind_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dailyForecast.windSpeed}"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_wind_speed_label"
+            tools:text="8.40 mph" />
+
+        <TextView
+            android:id="@+id/txt_wind_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dailyForecast.windDirection}"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_wind_speed"
+            tools:text="NW" />
+
+        <ImageView
+            android:id="@+id/img_weather_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/weather_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_date"
+            app:imageFromUrl="@{dailyForecast.weatherIconUrl}"
+            tools:src="@drawable/ic_sample_weather" />
+
+        <TextView
+            android:id="@+id/txt_weather_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{dailyForecast.weatherDescription}"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_weather_icon"
+            tools:text="light rain" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

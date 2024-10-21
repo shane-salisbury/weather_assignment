@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_network">Error connecting to server</string>
+    <string name="error_unknown">An unknown error occurred</string>
+    <string name="error_location_not_provided">Location not available</string>
+    <string name="retry">Retry</string>
+</resources>
